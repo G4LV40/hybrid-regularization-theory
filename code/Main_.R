@@ -31,7 +31,7 @@ source('evaluate_models.R')
 # Simulation wrapper
 # ===========================================================
 
-
+# Detecta e registra núcleos
 cl <- makeCluster(parallel::detectCores() - 1)  # usa todos menos 1 núcleo
 registerDoParallel(cl)
 
@@ -75,10 +75,10 @@ simulate_multiple_parallel <- function(n_sim = 10, n_vals = n_vals, p_vals = p_v
 
 df_results <- simulate_multiple_parallel(n_sim = 10,n_vals = c(200,500,1000), p_vals = c(5,10,50), k = 5)
 
-
+# Encerra o cluster após execução
 #stopCluster(cl)
 
-# Salving
+# Salvando os resultados
 write.csv(df_results, "results_bestsubset_rmse_corrected_1.csv", row.names = FALSE)
 save(df_results, file = "results_bestsubset_rmse_corrected_1.RData")
 
