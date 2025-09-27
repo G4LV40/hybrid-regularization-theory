@@ -1,7 +1,4 @@
 
-# ===================================================
-# Script: Visualizações para Artigo 2 
-# ===================================================
 
 # Pacotes
 library(ggplot2)
@@ -197,6 +194,7 @@ ggplot(df_plot, aes(x = RMSE, y = Jaccard, color = group)) +
     x = "RMSE (Root Mean Squared Error)"
   ) +
   theme(legend.position = "bottom")
+
 
 
 
